@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production Control &amp; Traceability System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ LOGIN SCREEN ============ -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="login-logo">PCTS</div>
+        <h1>Production Control &amp; Traceability System</h1>
+        <p class="muted">Administration &amp; Management Module &middot; Spec v3.0</p>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <label>Username
+          <input type="text" id="login-username" autocomplete="username" required />
+        </label>
+        <label>Password
+          <input type="password" id="login-password" autocomplete="current-password" required />
+        </label>
+        <div id="login-error" class="form-error" hidden></div>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+
+      <form id="mfa-form" class="login-form" hidden>
+        <p>Enter the 6-digit code from your authenticator app.</p>
+        <label>MFA code
+          <input type="text" id="mfa-code" maxlength="6" inputmode="numeric" autocomplete="one-time-code" required />
+        </label>
+        <div id="mfa-error" class="form-error" hidden></div>
+        <button type="submit" class="btn btn-primary btn-block">Verify</button>
+      </form>
+
+      <div class="login-demo">
+        <strong>Demo accounts</strong> (password: <code>Trenser@2026</code>)
+        <table>
+          <tr><td>admin</td><td>System Admin</td></tr>
+          <tr><td>pmanager</td><td>Production Manager</td></tr>
+          <tr><td>supervisor</td><td>Supervisor</td></tr>
+          <tr><td>qaofficer</td><td>QA/QC Officer</td></tr>
+          <tr><td>maintenance</td><td>Maintenance Officer</td></tr>
+          <tr><td>operator1</td><td>Operator</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ APP SHELL ============ -->
+  <div id="app-shell" class="app-shell" hidden>
+    <header class="topbar">
+      <div class="topbar-left">
+        <button id="nav-toggle" class="icon-btn" title="Toggle navigation">&#9776;</button>
+        <span class="topbar-title">PCTS</span>
+      </div>
+      <div class="topbar-search">
+        <input type="text" id="global-search" placeholder="Search orders, batches, machines, defects..." />
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <div class="topbar-right">
+        <button id="notif-btn" class="icon-btn" title="Notifications">&#128276;<span id="notif-count" class="badge-dot" hidden></span></button>
+        <div id="notif-panel" class="notif-panel" hidden></div>
+        <div class="user-chip" id="user-chip">
+          <span id="user-name">-</span>
+          <span id="user-role" class="muted"></span>
+        </div>
+        <button id="logout-btn" class="btn btn-ghost">Log out</button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <nav id="sidebar" class="sidebar"></nav>
+      <main id="content" class="content"></main>
+    </div>
+  </div>
+
+  <!-- ============ MODAL / TOAST ROOTS ============ -->
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/views_production.js"></script>
+  <script src="js/views_resources.js"></script>
+  <script src="js/views_quality.js"></script>
+  <script src="js/views_monitoring.js"></script>
+  <script src="js/views_admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
