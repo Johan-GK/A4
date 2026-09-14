@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PCTS — Production Control and Traceability System
 
 A complete, working reference implementation of the Production Control and
@@ -145,3 +146,7 @@ pcts/
   logic, built for demonstration and evaluation rather than hardened for
   production traffic (e.g., the scheduler's admission control is
   in-process and single-instance).
+=======
+# A4
+Smart Manufacturing &amp; Production Control Platform
+>>>>>>> 8df7b7a70aa71df6dd9bbf5eb96dd72936a886a6
